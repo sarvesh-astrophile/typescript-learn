@@ -55,5 +55,5 @@ function redirectBasedOnRole(role: Role): void {
         console.log("redirecting to guest")
     }
 
-    if (role) 
+    if (role)
 }

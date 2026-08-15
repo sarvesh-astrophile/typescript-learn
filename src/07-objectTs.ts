@@ -1,37 +1,104 @@
-const chai = {
-    name: "Masala chai",
-    price: 20,
-    isHot: true,
-}
+// const chai = {
+//     name: "Masala chai",
+//     price: 20,
+//     isHot: true,
+// }
 
-// let tea: {
+// // let tea: {
+// //     name: string;
+// //     price: number;
+// //     isHot: boolean;
+// // } = {
+// //     name: "Masala tea",
+// //     price: 15,
+// //     isHot: false,
+// // }
+
+// type Tea = {
+//     name: string;
+//     price: number;
+//     ingredients: string[];
+// }
+
+// const adrakChai: Tea = {
+//     name: "Adrak chai",
+//     price: 25,
+//     ingredients: ["ginger", "tea leaves"],
+// }
+
+// type Cup = {size: string}
+// let smallCup: Cup = {size: "200ml"}
+// let bigCup = {size: "500ml", material: "steel"}
+
+// smallCup = bigCup
+
+// type Brew = { brewTime: number }
+// const coffee = { brewTime: 5, beans: "Arabica" }
+// const chaiBrew: Brew = coffee
+
+// type User = {
+//     username: string;
+//     password: string;
+// }
+
+// const u: User = {
+//     username: "chaicode",
+//     password: "",
+// }
+
+// type Item = {name: string, quantity: number}
+// type Address = { street: string, pin: number }
+// type Order = {
+//     id: string;
+//     items: Item[];
+//     address: Address;
+// }
+
+// type Chai = {
 //     name: string;
 //     price: number;
 //     isHot: boolean;
-// } = {
-//     name: "Masala tea",
-//     price: 15,
-//     isHot: false,
 // }
 
-type Tea = {
+// const updateChai = (updates: Partial<Chai>) => {
+//     console.log("updating chai with", updates)
+// }
+
+// updateChai({ price: 25 })
+// updateChai({ isHot: false })
+// updateChai({})
+
+
+// type ChaiOrder = {
+//   name?: string;
+//   quantity?: number;
+// }
+
+// const placeOrder = (order: Required<ChaiOrder>) => {
+//   console.log("placing order", order)
+// }
+
+// placeOrder({ name: "Masala chai", quantity: 6 })
+
+type Chai = {
     name: string;
     price: number;
+    isHot: boolean;
     ingredients: string[];
 }
 
-const adrakChai: Tea = {
-    name: "Adrak chai",
-    price: 25,
-    ingredients: ["ginger", "tea leaves"],
+type BasicChaiInfo = Pick<Chai, "name" | "price">;
+
+const chai: BasicChaiInfo = {
+    name: "Masala chai",
+    price: 5,
 }
 
-type Cup = {size: string}
-let smallCup: Cup = {size: "200ml"}
-let bigCup = {size: "500ml", material: "steel"}
+type ChaiNew = {
+    name: string;
+    price: number;
+    isHot: boolean;
+    secreatIngredients: string;
+}
 
-smallCup = bigCup
-
-type Brew = { brewTime: number }
-const coffee = { brewTime: 5, beans: "Arabica" }
-const chaiBrew: Brew = coffee
+type PublicChaiInfo = Omit<ChaiNew, "secreatIngredients">;
